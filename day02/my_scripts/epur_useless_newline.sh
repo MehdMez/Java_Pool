@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sed '/^[[:space:]]*$/d'
+sed -i '/^$/d'
