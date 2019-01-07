@@ -15,25 +15,36 @@ public class SlotMachine{
 	if(rouleau1.length()>=7){
 	    rouleau1 = rouleau1.substring(0, 7);
 	}
+	else if(rouleau1.length() == 5){
+	    rouleau1 = " "+rouleau1+" ";
+	}
 	else if(rouleau1.length()<7){
 	    for(int i = rouleau1.length(); i<7; i++){
-		    rouleau1 += " ";
+		    rouleau1 = " "+rouleau1;
 		}
         }
       	if(rouleau2.length()>=7){
 	    rouleau2 = rouleau2.substring(0, 7);
 	}
+        else if(rouleau2.length() == 5){
+            rouleau2 =	" "+rouleau2+" ";
+	}
+
       	else if(rouleau2.length()<7){
 	    for(int i = rouleau2.length(); i<7; i++){
-		    rouleau2 += " ";
+		    rouleau2 = " "+rouleau2;
 		}
         }
     	if(rouleau3.length()>=7){
 	    rouleau3 = rouleau3.substring(0, 7);
 	}
+        else if(rouleau3.length() == 5){
+            rouleau3 =	" "+rouleau3+" ";
+	}
+
       	else if(rouleau3.length()<7){
 	    for(int i = rouleau3.length(); i<7; i++){
-		    rouleau3 += " ";
+		    rouleau3 = " "+rouleau3;
 		}
         }
 
