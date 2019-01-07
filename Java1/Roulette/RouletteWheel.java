@@ -11,6 +11,8 @@ public class RouletteWheel{
 	Scanner scanner = new Scanner(System.in);
 	String input = scanner.nextLine();
 	boolean resultat = false;
+	int result=0;
+
 	if(input.equalsIgnoreCase("rules")){
 		System.out.println("You can bet on a color like RED and BLACK case.");
 		System.out.println("You can't bet on GREEN.");
@@ -18,14 +20,20 @@ public class RouletteWheel{
 		playRouletteWheel();
 	}
 	
-        else if(input.equalsIgnoreCase("black") || input.equalsIgnoreCase("red") || input.equalsIgnoreCase("b")){
+        else if(input.equalsIgnoreCase("black") || input.equalsIgnoreCase("red") || input.equalsIgnoreCase("b") || input.equalsIgnoreCase("r")){
 		System.out.println("The result was " + number);
-		if((color == 1 && input.equalsIgnoreCase("black")) || (color == 2 && input.equalsIgnoreCase("red")) || (color == 1 && input.equalsIgnoreCase("b")) || (color ==2 && input.equalsIgnoreCase("r"))){
+		if((color == 1 && input.equalsIgnoreCase("black")) || (color == 0 && input.equalsIgnoreCase("red")) || (color == 1 && input.equalsIgnoreCase("b")) || (color ==0 && input.equalsIgnoreCase("r"))){
 		    System.out.println("You chose the right color");
 		    resultat = true;
 		}
 	}
-	else if(Integer.parseInt(input)>=0 || Integer.parseInt(input)<= 36){
+	else if(result>=0 && result<= 36){
+	    	try{result = Integer.parseInt(input);}
+		catch(NumberFormatException e)
+		    {
+			System.out.println("Seems like you are not very familiar here ..\n You have to tell my what you want to bet.\n You can bet on colors RED and BLACK or choose a number like: \n red or BLACK or b or 32... \n You can't have multiple bet nor incomprehensible bet. \n Remember that the roulette wheel have 37 cases. \n If so, I will have to ask you again... \n");
+			playRouletteWheel();
+		    }
 	    System.out.println("The result was " + number);
 		    if(Integer.parseInt(input)==number){
 			System.out.println("Right number");
@@ -34,10 +42,7 @@ public class RouletteWheel{
 		}
 	    
  
-        else{
-		System.out.println("Seems like you are not very familiar here ..\n You have to tell my what you want to bet.\n You can bet on colors RED and BLACK or choose a number like: \n red or BLACK or b or 32... \n You can't have multiple bet nor incomprehensible bet. \n Remember that the roulette wheel have 37 cases. \n If so, I will have to ask you again... \n");
-		playRouletteWheel();
-	    }
+
 	return resultat;
     }
 }
