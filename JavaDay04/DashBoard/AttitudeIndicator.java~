@@ -1,0 +1,8 @@
+import java.util.*;
+
+public class AttitudeIndicator extends GyroscopicSystems{
+    public AttitudeIndicator();
+    public float GiveGyroscopicTurn(){
+	return 0;
+    }
+}

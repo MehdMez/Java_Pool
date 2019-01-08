@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class Model{
+    private int weight;
+    private int numberOfSeat;
+
+    public Model(){
+	System.out.println("Yas");
+    }
+    public int getWeight(){
+	return 0;
+    }
+    public int getNumberOfSeat(){
+	return 0;
+    }
+}

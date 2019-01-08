@@ -1,0 +1,13 @@
+public class A340 implements Maniable{
+    public A340(){
+	System.out.println("I'm a mediumass plane");
+    }
+
+    public void DoBackFlip(){
+	System.out.println("I did it !");
+    }
+
+    public void DoBarrelRoll(){
+	System.out.println("Eh, Fox, come on");
+    }
+}

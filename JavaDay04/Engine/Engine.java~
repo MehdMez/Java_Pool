@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Engine{
+    protected int horsePower;
+    protected int remainingFuel;
+    protected String fuelType;
+
+    public Engine(){
+	this.horsePower = 0;
+	this.remainingFuel = 0;
+	this.fuelType = 0;
+    }
+    
+    public int getHorsePower(){
+	return horsePower;
+    }
+    
+    public int getFuelType(){
+	return fuelType;
+    }
+}

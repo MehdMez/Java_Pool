@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class CoPilot extends PlaneUser{
+    public CoPilot(){
+	System.out.println("I'm a copilot !");
+    }
+    public void Describe(){
+	System.out.println("Yo");
+    }
+    public void Action(){
+	System.out.println("The copilot is doing an action!");
+    }
+}

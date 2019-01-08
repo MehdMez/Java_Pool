@@ -1,0 +1,3 @@
+interface Strong{
+    void SkyPriority();
+}

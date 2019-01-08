@@ -1,0 +1,4 @@
+interface Maniable{
+    public void DoBackFlip();
+    public void DoBarrelRoll();
+}

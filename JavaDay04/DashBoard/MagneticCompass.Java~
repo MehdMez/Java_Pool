@@ -1,0 +1,8 @@
+import java.util.*;
+
+public class MagneticCompass extends CompassSystems{
+    public MagneticCompass();
+    public float GiveDirections(){
+	return 0;
+    }x
+}

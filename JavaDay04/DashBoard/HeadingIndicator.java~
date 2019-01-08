@@ -1,0 +1,9 @@
+import java.util.*;
+
+
+public class HeadingIndicator extends GyroscopicSystems{
+    public HeadingIndicator();
+    public float GiveGyroscopicTurn(){
+	return 0;
+    }
+}
