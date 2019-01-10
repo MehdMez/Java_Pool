@@ -13,7 +13,7 @@ public class DataServer{
 	OutputStream ostream = sock.getOutputStream();
 	PrintWriter writer = new PrintWriter(ostream, true);
 	writer.write("Welcome to my server !");
-	writer.flush();
+	writer.flush(); //On vide le buffer
 
 	//Reception de message grace au reciever
 	InputStream istream = sock.getInputStream();
@@ -22,12 +22,15 @@ public class DataServer{
 	String messageRecu, messageEnvoye;
 	//while(true) -> trant que le serveur tourne
 	while(true){
+	    
 	    if((messageRecu = reciever.readLine()) != null){
 		System.out.println("Message recieved : "+messageRecu);
 	    }
-	    messageEnvoye = reader.readLine();
-	    writer.println(messageEnvoye);
-	    writer.flush();  //NEcessaire pour le prochain input 
+	    if(reader.ready() && (messageEnvoye=reader.readLine()) != null){
+		messageEnvoye = reader.readLine();
+		writer.println(messageEnvoye);
+	    }
+	    writer.flush();  //Necessaire de vider le buffer pour le prochain input 
 	}	
     }
 }
