@@ -23,7 +23,7 @@ public class DataServer{
 	//while(true) -> trant que le serveur tourne
 	while(true){
 	    writer.flush();
-	    if((messageRecu = reciever.readLine()) != null){
+	    if(reciever.ready() && (messageRecu = reciever.readLine()) != null){
 		System.out.println("Message recieved : "+messageRecu);
 	    }
 	    if(reader.ready() != false){
