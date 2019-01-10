@@ -22,15 +22,16 @@ public class DataServer{
 	String messageRecu, messageEnvoye;
 	//while(true) -> trant que le serveur tourne
 	while(true){
-	    
+	    writer.flush();
 	    if((messageRecu = reciever.readLine()) != null){
 		System.out.println("Message recieved : "+messageRecu);
 	    }
-	    if(reader.ready() && (messageEnvoye=reader.readLine()) != null){
-		messageEnvoye = reader.readLine();
-		writer.println(messageEnvoye);
+	    if(reader.ready() != false){
+		messageEnvoye=reader.readLine();
+		writer.println(messageEnvoye+"\n");
+		
 	    }
-	    writer.flush();  //Necessaire de vider le buffer pour le prochain input 
+	    writer.flush();
 	}	
     }
 }
