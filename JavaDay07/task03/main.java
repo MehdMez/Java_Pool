@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class main{
     public static void main(String[] args){
-	MyLabel label= new MyLabel();
+	MyPanel panel= new MyPanel();
 	MyWindow window = new MyWindow();
-	window.createWindow(label.createHWLabel());
+	window.createWindow(panel.createHWPanel());
     }
 }
