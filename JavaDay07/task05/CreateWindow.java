@@ -1,0 +1,46 @@
+import javax.swing.*;
+import javax.swing.JButton;
+import java.awt.*;
+import java.awt.event.*;
+
+public class CreateWindow extends JFrame implements ActionListener{
+    JPanel panel;
+    
+    public void createWindow(){
+	//La fameuse formule
+	JFrame.setDefaultLookAndFeelDecorated(true);
+
+	//Frame creation
+	JFrame frame = new JFrame("Mah little window");
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	frame.getContentPane().add(createPanel());
+
+	//Affichage sur la fenêtre
+	frame.setSize(500, 100);
+	frame.setVisible(true);
+    }  
+
+    public JPanel createPanel(){
+	panel = new JPanel();
+	panel.setLayout(new FlowLayout());
+
+	JButton bouton = new JButton("Click here for image");
+	bouton.addActionListener(this);
+	panel.add(bouton);
+
+	return panel;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+	Object source = e.getSource();
+	
+	//if(source == bouton){
+	    ImageIcon image = new ImageIcon("image.png");
+	    JLabel label = new JLabel("", image, JLabel.CENTER);
+	    panel.add(label, BorderLayout.CENTER);
+	    this.revalidate();
+	    //}
+    }
+}
